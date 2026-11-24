@@ -3,585 +3,337 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Gift for Zizi ♡</title>
+<title>Zizi's Galaxy</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Fredoka', sans-serif;
-  overflow: hidden;
+    background: #050b20;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    overflow: hidden;
 }
 
 .page {
-  width: 100%;
-  height: 100dvh;
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  display: none;
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #142c64 0%, #080f2b 50%, #020611 100%);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
 }
 
 .page.active {
-  display: block;
+    display: flex;
 }
 
-/* =====================
-   PAGE 1 - UNDERWATER
-===================== */
-
-#page1 {
-  background:
-    radial-gradient(ellipse at 50% 0%, #c9fbff 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 70%, #0089dc 0%, transparent 70%),
-    linear-gradient(#55d9f5, #078acb 55%, #003e83);
-  color: white;
-  text-align: center;
-}
-
-.sunlight {
-  position: absolute;
-  inset: 0;
-  background: repeating-conic-gradient(
-    from 0deg at 50% -10%,
-    transparent 0deg,
-    rgba(255,255,255,.15) 4deg,
-    transparent 9deg
-  );
-  opacity: .5;
-  animation: shine 8s infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes shine {
-  to { opacity: .15; }
-}
-
-.title {
-  position: relative;
-  z-index: 2;
-  padding-top: 10vh;
-}
-
-.logo {
-  font-size: clamp(65px, 19vw, 105px);
-  font-weight: 700;
-  color: #c7f5ff;
-  letter-spacing: -5px;
-  text-shadow:
-    0 5px 0 #258dc7,
-    0 10px 0 #12669e,
-    0 15px 20px #004c85;
-}
-
-.subtitle {
-  font-size: 19px;
-  margin-top: 5px;
-  color: white;
-}
-
-.crab-area {
-  position: absolute;
-  width: 100%;
-  top: 35%;
-  left: 0;
-  z-index: 3;
-}
-
-.crab {
-  font-size: 95px;
-  display: block;
-  animation: crab 3s ease-in-out infinite;
-}
-
-@keyframes crab {
-  0%,100% { transform: rotate(-8deg) translateY(0); }
-  50% { transform: rotate(8deg) translateY(-12px); }
-}
-
-.sign {
-  background: linear-gradient(#ffe7a7, #e9ae65);
-  border: 5px solid #a96835;
-  color: #774326;
-  border-radius: 24px;
-  width: 75%;
-  max-width: 370px;
-  margin: -8px auto 15px;
-  padding: 13px;
-  font-size: 29px;
-  font-weight: 700;
-  box-shadow: 0 7px 0 #9c592e;
-  transform: rotate(-2deg);
-  animation: appear 1.5s ease both;
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0) rotate(-2deg); }
-}
-
-.play-main {
-  width: 175px;
-  height: 175px;
-  border-radius: 50%;
-  border: 8px solid rgba(255,255,255,.6);
-  background: radial-gradient(circle at 35% 25%, #fff7a8, #ffc52c 60%, #ed8b00);
-  box-shadow: 0 0 25px #a5f7ff;
-  font-size: 65px;
-  color: white;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-}
-
-.bubble {
-  position: absolute;
-  bottom: -60px;
-  width: 22px;
-  height: 22px;
-  border: 2px solid rgba(255,255,255,.7);
-  border-radius: 50%;
-  box-shadow: inset 3px 3px 8px white;
-  animation: float 9s linear infinite;
-}
-
-@keyframes float {
-  to {
-    transform: translateY(-115vh) translateX(35px);
-    opacity: 0;
-  }
-}
-
-.fish {
-  position: absolute;
-  font-size: 45px;
-  animation: swim 12s linear infinite;
-}
-
-@keyframes swim {
-  from { transform: translateX(-100px); }
-  to { transform: translateX(110vw); }
-}
-
-.coral {
-  position: absolute;
-  bottom: 0;
-  font-size: 65px;
-  opacity: .9;
-}
-
-.seabed {
-  position: absolute;
-  bottom: -40px;
-  width: 100%;
-  height: 110px;
-  background: linear-gradient(#e9d5a5, #a78c6c);
-  border-radius: 50% 50% 0 0;
-}
-
-/* =====================
-   PAGE 2 - FOREST
-===================== */
-
-#page2 {
-  background:
-    radial-gradient(ellipse at 50% 15%, rgba(255,255,200,.7), transparent 35%),
-    linear-gradient(180deg, #063f43, #12614e 45%, #07352f);
-  color: white;
-  text-align: center;
-  overflow-y: auto;
-}
-
-.forest-light {
-  position: absolute;
-  inset: 0;
-  background: repeating-conic-gradient(
-    from 0deg at 50% -10%,
-    transparent 0deg,
-    rgba(255,255,190,.14) 5deg,
-    transparent 11deg
-  );
-  animation: shine 8s infinite alternate;
-  pointer-events: none;
-}
-
-.leaves {
-  position: absolute;
-  font-size: 80px;
-  opacity: .7;
-}
-
-.leaves.left {
-  top: 0;
-  left: -20px;
-}
-
-.leaves.right {
-  top: 0;
-  right: -20px;
-}
-
-.back {
-  position: absolute;
-  top: 25px;
-  left: 20px;
-  z-index: 5;
-  background: rgba(0,0,0,.35);
-  color: white;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 35px;
-  padding: 13px 23px;
-  font-size: 19px;
-  cursor: pointer;
-}
-
-.heading {
-  position: relative;
-  padding: 110px 15px 25px;
-  z-index: 2;
-}
-
-.heading small {
-  letter-spacing: 5px;
-  font-size: 14px;
-}
-
-.heading h1 {
-  font-size: clamp(32px, 8vw, 48px);
-  margin: 18px 0;
-}
-
-.heading p {
-  font-size: 17px;
-}
-
-/* MUSIC PLAYER */
-
-.player {
-  position: relative;
-  z-index: 3;
-  width: 88%;
-  max-width: 480px;
-  margin: 10px auto 25px;
-  padding: 35px 22px;
-  border-radius: 40px;
-  background: rgba(0,20,30,.76);
-  border: 1px solid rgba(255,255,255,.25);
-  box-shadow: 0 15px 45px rgba(0,0,0,.4);
-  backdrop-filter: blur(15px);
-}
-
-.cd {
-  width: 220px;
-  height: 220px;
-  margin: auto;
-  border-radius: 50%;
-  border: 10px solid #b9e8ef;
-  background:
-    radial-gradient(circle, #e5faff 0 12%, #9ecedb 13% 20%, transparent 21%),
-    repeating-conic-gradient(
-      #8ad8ed 0deg,
-      #b9a7d9 20deg,
-      #a0e4df 40deg,
-      #8ad8ed 60deg
-    );
-  box-shadow: 0 0 25px #a5e9ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 65px;
-  animation: spin 5s linear infinite;
-  animation-play-state: paused;
-}
-
-.cd.playing {
-  animation-play-state: running;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.song {
-  margin-top: 25px;
-}
-
-.song h2 {
-  font-size: 28px;
-  color: #bceaff;
-}
-
-.song p {
-  font-size: 21px;
-  color: #a8c5d4;
-}
-
-.progress {
-  width: 100%;
-  height: 8px;
-  background: #a6d7df;
-  border-radius: 10px;
-  margin: 30px 0 12px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: #52d4ed;
-}
-
-.love {
-  display: flex;
-  justify-content: space-between;
-  color: #9ab9c5;
-  font-size: 15px;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 35px;
-  margin: 35px 0;
-}
-
-.controls button {
-  border: none;
-  background: transparent;
-  color: #bceaff;
-  font-size: 34px;
-  cursor: pointer;
-}
-
-.controls .main-control {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #b8eaff, #497e91);
-  color: white;
-  font-size: 38px;
-}
-
-.note {
-  color: #9bb7c2;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.connect {
-  position: relative;
-  z-index: 3;
-  width: 88%;
-  max-width: 480px;
-  margin: 15px auto 35px;
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(0,0,0,.5);
-  color: white;
-  font-size: 17px;
-  text-decoration: none;
-  display: block;
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
 .star {
-  position: absolute;
-  color: #fff5a5;
-  animation: sparkle 3s infinite;
-  pointer-events: none;
+    position: absolute;
+    border-radius: 50%;
+    background: #a8eaff;
+    box-shadow: 0 0 5px #6bdfff, 0 0 10px #45caff;
+    animation: twinkle 2s infinite alternate;
 }
 
-@keyframes sparkle {
-  0%,100% { opacity: .2; transform: scale(.7); }
-  50% { opacity: 1; transform: scale(1.3); }
+@keyframes twinkle {
+    from { opacity: .25; }
+    to { opacity: 1; }
 }
 
+/* PAGE 1 */
+
+.title {
+    font-size: clamp(85px, 22vw, 155px);
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #bceaff;
+    text-shadow: 0 0 15px #56cfff, 0 0 35px #278aff, 0 0 70px #1765d5;
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.subtitle {
+    color: #b8d9ff;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-top: -5px;
+    z-index: 2;
+}
+
+button {
+    font-family: 'Fredoka', sans-serif;
+    border: 1px solid #a6ddff;
+    color: #e7f8ff;
+    background: rgba(88, 164, 255, .18);
+    box-shadow: 0 0 15px #348bdb;
+    border-radius: 30px;
+    padding: 12px 35px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 5;
+}
+
+button:hover {
+    background: #8bd7ff;
+    color: #07142e;
+    transform: scale(1.08);
+}
+
+.play {
+    margin-top: 35px;
+}
+
+@keyframes float {
+    50% { transform: translateY(-12px); }
+}
+
+/* PAGE 2 */
+
+.two-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(15px, 7vw, 75px);
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.big-star {
+    width: clamp(125px, 32vw, 210px);
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #c6f3ff, #67b9ff 50%, #2865c7);
+    clip-path: polygon(50% 0%, 62% 34%, 98% 35%, 70% 57%, 80% 94%, 50% 72%, 20% 94%, 30% 57%, 2% 35%, 38% 34%);
+    filter: drop-shadow(0 0 15px #56caff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: float 3s infinite ease-in-out;
+}
+
+.big-star span {
+    font-size: clamp(15px, 4vw, 23px);
+    color: #12346b;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.big-star:nth-child(2) {
+    animation-delay: .5s;
+    background: linear-gradient(145deg, #f1dfff, #b38cff 50%, #6448bc);
+}
+
+.next {
+    margin-top: 65px;
+}
+
+/* PAGE 3 */
+
+.letter {
+    position: relative;
+    width: min(90%, 410px);
+    min-height: 440px;
+    padding: 55px 28px 35px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #e2f5ff, #b8dfff, #d9eaff);
+    color: #264b80;
+    box-shadow: 0 0 25px #58aaff, 0 0 70px rgba(65, 157, 255, .4);
+    z-index: 2;
+    transform: rotate(-1deg);
+}
+
+.letter h2 {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #386bb0;
+}
+
+.letter p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 2;
+    text-align: left;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    font-family: 'Pacifico', cursive;
+    font-size: 19px;
+}
+
+.ribbon {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #ffb9d9, #e875b6, #ffadd4);
+    filter: drop-shadow(2px 4px 4px #7d579c);
+    z-index: 4;
+}
+
+.ribbon::before,
+.ribbon::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 9px solid #f58cbe;
+    border-radius: 50% 50% 10% 50%;
+    top: 8px;
+}
+
+.ribbon::before {
+    left: -16px;
+    transform: rotate(-35deg);
+}
+
+.ribbon::after {
+    right: -16px;
+    transform: rotate(35deg);
+}
+
+.ribbon.top {
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ribbon.bottom {
+    bottom: -20px;
+    right: 15px;
+    transform: rotate(45deg) scale(.7);
+}
+
+.edge-star {
+    position: absolute;
+    color: #70aaff;
+    text-shadow: 0 0 8px #479bff;
+    font-size: 23px;
+}
+
+.s1 { top: 18px; left: 15px; }
+.s2 { top: 100px; right: 12px; }
+.s3 { bottom: 35px; left: 15px; }
+.s4 { bottom: 120px; right: 20px; }
+
+.back {
+    margin-top: 35px;
+}
+
+@media(max-width: 400px) {
+    .letter {
+        padding: 48px 22px 30px;
+        min-height: 410px;
+    }
+
+    .letter p {
+        font-size: 13px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <!-- PAGE 1 -->
-
-<section id="page1" class="page active">
-
-<div class="sunlight"></div>
-
-<div class="title">
-  <div class="logo">Zizi</div>
-  <div class="subtitle">
-    this gift for you from ashey ♡
-  </div>
-</div>
-
-<div class="fish" style="top:32%;left:-70px">🐠</div>
-<div class="fish" style="top:58%;right:-70px;animation-delay:3s">🐟</div>
-<div class="fish" style="top:73%;left:-70px;animation-delay:6s">🐡</div>
-
-<div class="crab-area">
-  <span class="crab">🦀</span>
-
-  <div class="sign">
-    pencet aku<br>sayang ♡
-  </div>
-
-  <button class="play-main" onclick="goNext()">
-    ▶
-  </button>
-</div>
-
-<div class="coral" style="left:0">🪸</div>
-<div class="coral" style="right:0">🪸</div>
-
-<div class="seabed"></div>
-
+<section class="page active" id="page1">
+    <div class="stars"></div>
+    <div class="title">ZIZI</div>
+    <div class="subtitle">A LITTLE WORLD FOR YOU ✦</div>
+    <button class="play" onclick="goTo(2)">▶ PLAY</button>
 </section>
 
 <!-- PAGE 2 -->
+<section class="page" id="page2">
+    <div class="stars"></div>
 
-<section id="page2" class="page">
+    <div class="two-stars">
+        <div class="big-star"><span>ZIZI</span></div>
+        <div class="big-star"><span>ASHEY</span></div>
+    </div>
 
-<div class="forest-light"></div>
+    <button class="next" onclick="goTo(3)">NEXT →</button>
+</section>
 
-<div class="leaves left">🌿</div>
-<div class="leaves right">🌳</div>
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+    <div class="stars"></div>
 
-<button class="back" onclick="goBack()">← Back</button>
+    <div class="letter">
+        <div class="ribbon top"></div>
 
-<div class="heading">
-  <small>A LITTLE MUSIC FOR YOU</small>
-  <h1>A song for Zizi ✦</h1>
-  <p>Take a little moment and enjoy the music</p>
-</div>
+        <span class="edge-star s1">✦</span>
+        <span class="edge-star s2">✧</span>
+        <span class="edge-star s3">✦</span>
+        <span class="edge-star s4">✧</span>
 
-<div class="player">
+        <h2>Dear Zizi ♡</h2>
 
-  <div class="cd" id="cd">🌊</div>
+        <p>
+            HEY ZIZI, THIS IS ASHEY.
+            <br><br>
+            I THINK I'VE LOVED YOU SINCE THE FIRST TIME I SAW YOU.
+            <br><br>
+            I HOPE THIS LITTLE WORLD MAKES YOU SMILE.
+            YOU DESERVE ALL THE LITTLE STARS IN THIS UNIVERSE.
+        </p>
 
-  <div class="song">
-    <h2>Labyrinth</h2>
-    <p>Taylor Swift</p>
-  </div>
+        <div class="signature">with love, Ashey ♡</div>
+        <div class="ribbon bottom"></div>
+    </div>
 
-  <div class="progress">
-    <div class="progress-fill" id="fill"></div>
-  </div>
-
-  <div class="love">
-    <span>♡</span>
-    <span>with love, Ashey</span>
-  </div>
-
-  <div class="controls">
-    <button onclick="previousSong()">|◀</button>
-    <button class="main-control" id="playBtn" onclick="toggleMusic()">▶</button>
-    <button onclick="nextSong()">▶|</button>
-  </div>
-
-  <div class="note">
-    Add the Spotify link below to play the actual song ♡
-  </div>
-
-</div>
-
-<a class="connect"
-href="https://open.spotify.com/search/Labyrinth%20Taylor%20Swift"
-target="_blank">
-  ▶ Connect the song from Spotify
-</a>
-
+    <button class="back" onclick="goTo(2)">← BACK</button>
 </section>
 
 <script>
+function makeStars() {
+    document.querySelectorAll('.stars').forEach(container => {
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
 
-// PAGE TRANSITION
+            const size = Math.random() * 2 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
 
-function goNext() {
-  document.getElementById('page1').classList.remove('active');
-  document.getElementById('page2').classList.add('active');
+            container.appendChild(star);
+        }
+    });
 }
 
-function goBack() {
-  document.getElementById('page2').classList.remove('active');
-  document.getElementById('page1').classList.add('active');
+function goTo(number) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page' + number).classList.add('active');
 }
 
-// BUBBLES
-
-for(let i = 0; i < 35; i++) {
-  let bubble = document.createElement('div');
-  bubble.className = 'bubble';
-
-  bubble.style.left = Math.random() * 100 + '%';
-  bubble.style.animationDelay = Math.random() * 9 + 's';
-  bubble.style.animationDuration = (6 + Math.random() * 7) + 's';
-  bubble.style.width = (10 + Math.random() * 25) + 'px';
-  bubble.style.height = bubble.style.width;
-
-  document.getElementById('page1').appendChild(bubble);
-}
-
-// FOREST STARS
-
-for(let i = 0; i < 18; i++) {
-  let star = document.createElement('div');
-  star.className = 'star';
-  star.textContent = '✦';
-
-  star.style.left = Math.random() * 100 + '%';
-  star.style.top = Math.random() * 100 + '%';
-  star.style.animationDelay = Math.random() * 3 + 's';
-
-  document.getElementById('page2').appendChild(star);
-}
-
-// MUSIC PLAYER VISUAL CONTROLS
-
-let playing = false;
-let progress = 0;
-let timer;
-
-function toggleMusic() {
-  playing = !playing;
-
-  const cd = document.getElementById('cd');
-  const btn = document.getElementById('playBtn');
-
-  if(playing) {
-    cd.classList.add('playing');
-    btn.textContent = 'Ⅱ';
-
-    timer = setInterval(() => {
-      progress += 0.15;
-      if(progress >= 100) progress = 0;
-      document.getElementById('fill').style.width = progress + '%';
-    }, 1000);
-
-  } else {
-    cd.classList.remove('playing');
-    btn.textContent = '▶';
-    clearInterval(timer);
-  }
-}
-
-function nextSong() {
-  alert('This is a special song for Zizi ♡');
-}
-
-function previousSong() {
-  alert('This is a special song for Zizi ♡');
-}
-
+makeStars();
 </script>
 
 </body>
